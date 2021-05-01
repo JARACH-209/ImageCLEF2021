@@ -1,45 +1,49 @@
-Note: currently takes approximately 152s per epoch. GPU Acceleration is not being used.
+Train Batch Size = 1
+Val Batch Size = 1
+Random State = 1
 
-## MODEL ARCHITECTURE:
+Training time per step = 5s
+Trained for 366 steps per epoch x 48 epochs
 
 Model: "3dcnn"
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-input_6 (InputLayer)         [(None, 512, 512, 64, 1)] 0         
+input_1 (InputLayer)         [(None, 512, 512, 64, 1)] 0         
 _________________________________________________________________
-conv3d_20 (Conv3D)           (None, 510, 510, 62, 64)  1792      
+3D_64_1 (Conv3D)             (None, 510, 510, 62, 64)  1792      
 _________________________________________________________________
-max_pooling3d_20 (MaxPooling (None, 255, 255, 31, 64)  0         
+max_pooling3d (MaxPooling3D) (None, 255, 255, 31, 64)  0         
 _________________________________________________________________
-batch_normalization_20 (Batc (None, 255, 255, 31, 64)  256       
+batch_normalization (BatchNo (None, 255, 255, 31, 64)  256       
 _________________________________________________________________
-conv3d_21 (Conv3D)           (None, 253, 253, 29, 64)  110656    
+3D_64_2 (Conv3D)             (None, 253, 253, 29, 64)  110656    
 _________________________________________________________________
-max_pooling3d_21 (MaxPooling (None, 126, 126, 14, 64)  0         
+max_pooling3d_1 (MaxPooling3 (None, 126, 126, 14, 64)  0         
 _________________________________________________________________
-batch_normalization_21 (Batc (None, 126, 126, 14, 64)  256       
+batch_normalization_1 (Batch (None, 126, 126, 14, 64)  256       
 _________________________________________________________________
-conv3d_22 (Conv3D)           (None, 124, 124, 12, 128) 221312    
+3D_128_1 (Conv3D)            (None, 124, 124, 12, 128) 221312    
 _________________________________________________________________
-max_pooling3d_22 (MaxPooling (None, 62, 62, 6, 128)    0         
+max_pooling3d_2 (MaxPooling3 (None, 62, 62, 6, 128)    0         
 _________________________________________________________________
-batch_normalization_22 (Batc (None, 62, 62, 6, 128)    512       
+batch_normalization_2 (Batch (None, 62, 62, 6, 128)    512       
 _________________________________________________________________
-conv3d_23 (Conv3D)           (None, 60, 60, 4, 256)    884992    
+3D_128_2 (Conv3D)            (None, 60, 60, 4, 128)    442496    
 _________________________________________________________________
-max_pooling3d_23 (MaxPooling (None, 30, 30, 2, 256)    0         
+max_pooling3d_3 (MaxPooling3 (None, 30, 30, 2, 128)    0         
 _________________________________________________________________
-batch_normalization_23 (Batc (None, 30, 30, 2, 256)    1024      
+batch_normalization_3 (Batch (None, 30, 30, 2, 128)    512       
 _________________________________________________________________
-global_average_pooling3d_5 ( (None, 256)               0         
+global_average_pooling3d (Gl (None, 128)               0         
 _________________________________________________________________
-dense_10 (Dense)             (None, 512)               131584    
+dense (Dense)                (None, 512)               66048     
 _________________________________________________________________
-dropout_5 (Dropout)          (None, 512)               0         
+dropout (Dropout)            (None, 512)               0         
 _________________________________________________________________
-dense_11 (Dense)             (None, 5)                 2565      
+dense_1 (Dense)              (None, 5)                 2565      
 =================================================================
-Total params: 1,354,949
-Trainable params: 1,353,925
-Non-trainable params: 1,024
+Total params: 846,405
+Trainable params: 845,637
+Non-trainable params: 768
+_________________________________________________________________ 
