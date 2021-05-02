@@ -22,6 +22,7 @@ Set up a new remote with the CLEF Shared Drive (Team Drive in rclone lingo)
 
 ## Setting up the dataset
 ### For raw dataset
+```
 mkdir ~/Datasets
 cd ~/Datasets
 rclone copy RemoteName:Dataset/ImageCLEF/ ./ImageCLEF/ --exclude 'ImageSlices' -P
@@ -30,6 +31,9 @@ cd ImageCLEF
 mkdir Dataset
 mv *.tar ./Dataset
 tar -xvf ./Dataset/*.tar
+```
 ### For ImageSlices (warning, will take a lot of time)
+```
 cd ~/Datasets/ImageCLEF/
 rclone copy RemoteName:/Dataset/ImageCLEF/ImageSlices ./ImageSlices -P
+```
