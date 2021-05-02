@@ -76,9 +76,7 @@ for i, image in enumerate(image_vol_list):
         slice_resized.save(save_path)
         
         print(f'Created: {save_path}')
-        
-        break
-    sys.exit()
+
     total += 1
     
     total_time += time.monotonic() - t0
